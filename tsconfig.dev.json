@@ -1,0 +1,23 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"rootDir": "./src",
+		"declaration": false,
+		"noEmitOnError": true
+	},
+	"exclude": [
+		"node_modules",
+		"tsconfig.prod.json",
+		"tests",
+		"dist",
+		"**/*spec.ts",
+		"**/*.e2e-spec.ts",
+		"**/*.tests.ts",
+		"coverage",
+		"**/__tests__/**",
+		"**/__mocks__/**",
+		"vitest.config.ts",
+		"vitest.config.*.ts",
+		".swcrc"
+	]
+}
