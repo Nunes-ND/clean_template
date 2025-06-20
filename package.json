@@ -12,10 +12,14 @@
 	"scripts": {
 		"start": "npm run build && node dist/main",
 		"start:dev": "npm run build && node --env-file .env --watch dist/main",
+		"start:debug": "node --env-file .env --inspect=9229 --watch dist/main",
 		"start:prod": "npm run build:prod && node dist/main",
 		"build": "tsc -p tsconfig.dev.json",
 		"build:prod": "tsc -p tsconfig.prod.json",
-		"lint": "biome check --write --unsafe"
+		"lint": "biome check --write --unsafe",
+		"dev": "NODE_ENV=development node --env-file .env --import tsx --watch src/main",
+		"test": "vitest run",
+		"test:watch": "vitest --watch"
 	},
 	"dependencies": {},
 	"devDependencies": {
