@@ -1,0 +1,73 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Development Server (tsx)",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": [
+        "--env-file",
+        ".env",
+        "--import",
+        "tsx",
+        "--watch"
+      ],
+      "program": "${workspaceFolder}/src/main.ts",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**"
+      ],
+      "smartStep": true,
+      "outputCapture": "std",
+      "restart": true
+    },
+    {
+      "name": "Attach to Debug Server (Port 9229)",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "address": "localhost",
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "${workspaceFolder}",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/**/node_modules/**/*.js"
+      ],
+      "smartStep": true,
+      "restart": false,
+      "continueOnAttach": true
+    },
+    {
+      "name": "Debug Vitest: Current File",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/vitest",
+      "args": [
+        "watch",
+        "${file}",
+        "--test-timeout=0",
+        "--hook-timeout=0",
+        "--pool",
+        "threads",
+        "--poolOptions.threads.singleThread"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**"
+      ],
+      "smartStep": true,
+      "outFiles": [
+        "${workspaceFolder}/**/*.js",
+        "!**/node_modules/**"
+      ]
+    }
+  ]
+}
