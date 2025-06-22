@@ -21,7 +21,10 @@
 		"test": "vitest run",
 		"test:watch": "vitest --watch"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"date-fns": "^4.1.0",
+		"zod": "^3.25.67"
+	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
 		"@types/node": "^22.10.7",
